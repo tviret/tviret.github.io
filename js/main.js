@@ -1,6 +1,10 @@
 /* ── Theme toggle ── */
 const checkbox = document.getElementById('theme-checkbox');
 const root     = document.documentElement;
+/* __ Ping pas du tout discret __*/
+fetch('https://api.bonus.nc/api/ping')
+  .then(res => console.log(res.status))
+  .catch(err => console.error(err));
 
 /* dark par défaut, sauf si l'utilisateur a déjà choisi */
 const saved = localStorage.getItem('theme') ?? 'dark';
